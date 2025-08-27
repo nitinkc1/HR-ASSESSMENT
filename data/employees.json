@@ -1,0 +1,154 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "Alice Johnson",
+      "role": "Data Scientist",
+      "department": "Analytics",
+      "skills": ["Python", "Machine Learning", "SQL", "TensorFlow"],
+      "experience_years": 5,
+      "projects": ["E-commerce Platform", "Healthcare Dashboard"],
+      "availability": "available"
+    },
+    {
+      "id": 2,
+      "name": "Bob Smith",
+      "role": "Backend Engineer",
+      "department": "Platform",
+      "skills": ["Java", "Spring Boot", "MySQL", "Docker"],
+      "experience_years": 7,
+      "projects": ["Banking System", "Inventory Management"],
+      "availability": "available"
+    },
+    {
+      "id": 3,
+      "name": "Priya Desai",
+      "role": "Full Stack Developer",
+      "department": "Product",
+      "skills": ["Python", "Flask", "React", "SQL"],
+      "experience_years": 2,
+      "projects": ["Inventory System", "Healthcare Dashboard"],
+      "availability": "available"
+    },
+    {
+      "id": 4,
+      "name": "Samir Gupta",
+      "role": "Embedded Systems Engineer",
+      "department": "IoT",
+      "skills": ["C++", "Python", "IoT"],
+      "experience_years": 4,
+      "projects": ["Smart Metering", "Fleet Management"],
+      "availability": "busy"
+    },
+    {
+      "id": 5,
+      "name": "Yuvan Shankar",
+      "role": "ML Engineer",
+      "department": "AI",
+      "skills": ["Python", "PyTorch", "Flask", "Go"],
+      "experience_years": 5,
+      "projects": ["Smart Agriculture", "Payroll Automation"],
+      "availability": "available"
+    },
+    {
+      "id": 6,
+      "name": "Dr. Sarah Chen",
+      "role": "Research Scientist",
+      "department": "AI",
+      "skills": ["Machine Learning", "TensorFlow", "Medical Data"],
+      "experience_years": 6,
+      "projects": ["Medical Diagnosis Platform", "X-ray Analysis"],
+      "availability": "available"
+    },
+    {
+      "id": 7,
+      "name": "Michael Rodriguez",
+      "role": "Data Engineer",
+      "department": "Analytics",
+      "skills": ["Python", "Spark", "SQL", "ETL"],
+      "experience_years": 4,
+      "projects": ["Patient Risk Prediction System", "Billing Pipeline"],
+      "availability": "available"
+    },
+    {
+      "id": 8,
+      "name": "Nisha Patel",
+      "role": "DevOps Engineer",
+      "department": "Platform",
+      "skills": ["AWS", "Docker", "Kubernetes", "Terraform"],
+      "experience_years": 6,
+      "projects": ["Platform Modernization", "CI/CD Pipelines"],
+      "availability": "busy"
+    },
+    {
+      "id": 9,
+      "name": "Will Nitin",
+      "role": "Senior Java Developer",
+      "department": "Platform",
+      "skills": ["Java", "Spring", "MySQL", "Docker"],
+      "experience_years": 7,
+      "projects": ["Banking App", "Inventory System"],
+      "availability": "available"
+    },
+    {
+      "id": 10,
+      "name": "Leena Kapoor",
+      "role": "Frontend Engineer",
+      "department": "Product",
+      "skills": ["React", "TypeScript", "UI/UX"],
+      "experience_years": 3,
+      "projects": ["E-commerce Platform", "Admin Portal"],
+      "availability": "available"
+    },
+    {
+      "id": 11,
+      "name": "Hassan Ali",
+      "role": "Cloud Architect",
+      "department": "Platform",
+      "skills": ["AWS", "Azure", "Architecture", "Kubernetes"],
+      "experience_years": 9,
+      "projects": ["Platform Modernization", "Cloud Migration"],
+      "availability": "available"
+    },
+    {
+      "id": 12,
+      "name": "Maya Rao",
+      "role": "QA Engineer",
+      "department": "Product",
+      "skills": ["Selenium", "Python", "API Testing"],
+      "experience_years": 4,
+      "projects": ["Healthcare Dashboard", "Mobile App"],
+      "availability": "available"
+    },
+    {
+      "id": 13,
+      "name": "Arjun Mehta",
+      "role": "Data Analyst",
+      "department": "Analytics",
+      "skills": ["SQL", "Tableau", "Python"],
+      "experience_years": 2,
+      "projects": ["Sales Analytics", "Retail Insights"],
+      "availability": "available"
+    },
+    {
+      "id": 14,
+      "name": "Giti Srinivasan",
+      "role": "Security Engineer",
+      "department": "Platform",
+      "skills": ["Security", "DevSecOps", "Docker"],
+      "experience_years": 5,
+      "projects": ["Compliance Automation", "Security Hardening"],
+      "availability": "busy"
+    },
+    {
+      "id": 15,
+      "name": "Rohit Kumar",
+      "role": "Backend Developer",
+      "department": "Product",
+      "skills": ["Node.js", "Express", "MongoDB"],
+      "experience_years": 3,
+      "projects": ["Payment Gateway", "Messaging Platform"],
+      "availability": "available"
+    }
+  ]
+}
