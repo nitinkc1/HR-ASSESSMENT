@@ -1,4 +1,3 @@
-```markdown
 # 🤖 HR Resource Query Chatbot
 
 ## Overview
@@ -16,24 +15,22 @@ An AI-powered HR assistant chatbot that helps HR teams quickly locate suitable e
 - Customizable frontend appearance (colors, layout, and styling)  
 - Advanced prompt engineering for detailed and context-aware responses  
 
----
-
 ## Architecture
 ```
-
 User (Browser)
-│
-▼
-\[Streamlit Frontend]
-│ REST API (POST /chat, GET /employees/search)
-▼
-\[FastAPI Backend]
-│
-├─ RAG Logic (sentence-transformers semantic search)
-└─ Employee Dataset (JSON)
-└─ Llama LLM via Ollama (local API)
-
-````
+   │
+   ▼
+[Streamlit Frontend]
+   │ REST API (POST /chat, GET /employees/search)
+   ▼
+[FastAPI Backend]
+   │
+   ├─ RAG Logic (sentence-transformers, semantic search)
+   │
+   └─ Employee Data (JSON)
+   │
+   └─ Llama LLM via Ollama (local API)
+```
 
 - **Frontend:** Streamlit app for chat with responsive message bubbles  
 - **Backend:** FastAPI application with endpoints for chat and employee search  
