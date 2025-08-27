@@ -1,22 +1,20 @@
-Got it! I’ve rewritten your README to make it **plagiarism-free, concise, and copy-paste ready**, keeping your ideas intact but phrasing everything originally:
-
 ```markdown
 # 🤖 HR Resource Query Chatbot
 
 ## Overview
-This project is an AI-powered HR assistant chatbot that helps HR teams quickly find suitable employees. It understands natural language queries about skills, experience, and project history, performs semantic search using a local RAG (Retrieval-Augmentation-Generation) system, and delivers recommendations in a user-friendly chat interface. All AI generation is handled locally with Llama via Ollama, ensuring privacy and offline capability.
+An AI-powered HR assistant chatbot that helps HR teams quickly locate suitable employees. The system understands natural language queries about skills, experience, and project history, performs semantic search using a local RAG (Retrieval-Augmentation-Generation) engine, and delivers recommendations in a clean chat interface. All AI processing is handled locally using Llama via Ollama, ensuring privacy and offline usage.
 
 ---
 
 ## Features
 - Search employees by skills, experience, project history, and availability  
-- Interactive chat interface built with Streamlit, featuring styled message bubbles  
-- FastAPI backend with semantic search (RAG) for quick retrieval  
-- 30+ realistic employee profiles for testing and demonstration  
+- Interactive Streamlit chat interface with styled message bubbles  
+- FastAPI backend with semantic search (RAG) for fast retrieval  
+- Includes 30+ realistic employee profiles for testing  
 - Clear, structured recommendations in natural language  
-- Fully local LLM processing with Llama via Ollama (no cloud API required)  
+- Fully local LLM processing with Llama via Ollama (no cloud API)  
 - Customizable frontend appearance (colors, layout, and styling)  
-- Advanced prompt engineering for detailed, comparative, and context-aware responses  
+- Advanced prompt engineering for detailed and context-aware responses  
 
 ---
 
@@ -32,35 +30,33 @@ User (Browser)
 \[FastAPI Backend]
 │
 ├─ RAG Logic (sentence-transformers semantic search)
-│
 └─ Employee Dataset (JSON)
-│
 └─ Llama LLM via Ollama (local API)
 
 ````
 
-- **Frontend:** Streamlit app for chat with colored UI and responsive message bubbles  
+- **Frontend:** Streamlit app for chat with responsive message bubbles  
 - **Backend:** FastAPI application with endpoints for chat and employee search  
-- **RAG Logic:** Embedding-based retrieval using sentence-transformers, combined with local Llama generation for natural responses  
+- **RAG Logic:** Embedding-based retrieval with sentence-transformers + local Llama generation  
 - **Data:** JSON dataset containing 30+ employee profiles  
 
 ---
 
 ## Setup & Installation
 
-1. **Clone the repository**:
+1. **Clone the repository**
 ```bash
 git clone https://github.com/nitinkc1/HR-ASSESSMENT.git
 cd HR-ASSESSMENT
 ````
 
-2. **Install dependencies**:
+2. **Install dependencies**
 
 ```bash
 pip install -r requirements.txt
 ```
 
-3. **Install Ollama and Llama model**:
+3. **Install Ollama and Llama model**
 
 * Download Ollama: [https://ollama.com/download](https://ollama.com/download)
 * Pull a Llama model:
@@ -75,21 +71,21 @@ ollama pull llama2   # or llama3
 ollama run llama2
 ```
 
-4. **Start the backend**:
+4. **Start the backend**
 
 ```bash
 uvicorn backend.main:app --reload
 ```
 
-* API available at `http://localhost:8000`
+*API available at* `http://localhost:8000`
 
-5. **Start the frontend**:
+5. **Start the frontend**
 
 ```bash
 streamlit run frontend/app.py
 ```
 
-* UI opens at `http://localhost:8501`
+*UI opens at* `http://localhost:8501`
 
 ---
 
@@ -97,74 +93,54 @@ streamlit run frontend/app.py
 
 ### POST /chat
 
-* **Purpose:** Chat with the HR assistant
-* **Request:**
+**Purpose:** Chat with the HR assistant
+
+**Request Example:**
 
 ```json
-{ "query": "Find SQL  developers with 3+ years experience" }
+{ "query": "Find SQL developers with 3+ years experience" }
 ```
 
-* **Response:**
+**Response Example:**
 
+```
 🤖 Based on your requirements, I found 3 strong candidates:
 
 💼 1. Will Zhang
    - Experience: 7 years
-   - Key Skills: Java, Spring, MySQL
-   - Notable Projects: Banking App, Inventory System
+   - Skills: Java, Spring, MySQL
+   - Projects: Banking App, Inventory System
    - Availability: ✅ available
 
 💼 2. Priya Desai
    - Experience: 2 years
-   - Key Skills: Python, Flask, SQL
-   - Notable Projects: Inventory System, Healthcare Dashboard
+   - Skills: Python, Flask, SQL
+   - Projects: Inventory System, Healthcare Dashboard
    - Availability: ✅ available
 
 💼 3. Genie
    - Experience: 4 years
-   - Key Skills: PyTorch, Azure, C++, DevOps
-   - Notable Projects: Fleet Management, Retail Analytics
+   - Skills: PyTorch, Azure, C++, DevOps
+   - Projects: Fleet Management, Retail Analytics
    - Availability: ✅ available
-
-🤔 Would you like more details about their specific projects or to check their availability for meetings?
-
-
-### GET /employees/search
-
-* **Purpose:** Search employees by skill, experience, project, or availability
-* **Query example:**
-
 ```
-/employees/search?skill=Python&min_experience=3
-```
-
-* **Response:** List of matching employees in JSON
 
 ---
 
 ## AI Development Process
 
-* **Tools Used:** ChatGPT, Cursor AI for coding assistance
-* **Assistance Provided:**
-
-  * Generating FastAPI and Streamlit boilerplate
-  * Debugging errors and dependency issues
-  * Structuring project architecture
-  * Frontend improvements and chat bubble formatting
-  * Prompt design for Llama/Ollama to produce detailed responses
-* **AI vs Manual Work:**
-
-  * \~70% AI-assisted for code generation and formatting
-  * Manual work for debugging, custom logic, and UI fine-tuning
-* **Challenges Solved Manually:** Streamlit session handling, CSS rendering, and multi-attribute ranking
+* **Tools:** ChatGPT, Cursor AI for code assistance
+* **AI-assisted work (\~70%):** code generation, boilerplate, debugging, project structure
+* **Manual work (\~30%):** UI fine-tuning, session handling, CSS styling, custom logic
+* **Challenges solved manually:** Streamlit session state, message bubble rendering, multi-attribute ranking
 
 ---
 
 ## Technical Decisions
 
 * **Tech Stack:** Python, FastAPI, Streamlit, sentence-transformers, scikit-learn, NumPy, Ollama
-* **RAG System:** Local embeddings for fast semantic search; Llama via Ollama for response generation
-* **Reason for Local LLM:** Privacy, offline use, no cloud API costs
+* **RAG System:** Local embeddings for fast semantic search + Llama for natural response generation
+* **Reason for Local LLM:** Privacy, offline use, zero cloud costs
 * **Performance & Privacy:** All data and processing remain local, ensuring security and fast response
 
 ---
@@ -174,35 +150,31 @@ streamlit run frontend/app.py
 * User authentication and role-based access
 * Upload custom employee datasets (CSV/Excel)
 * Calendar integration for scheduling
-* Advanced LLM responses using different models
+* Advanced LLM responses using multiple models
 * Enhanced UI: avatars, mobile-friendly design, chat bubbles
 * AI voice response and analytics dashboard
 
 ---
 
-
 ## Demo
-screenshots
-<img width="1277" height="560" alt="image" src="https://github.com/user-attachments/assets/bb3f6390-03e6-49d2-be68-1a8dff6d8ec6" />
 
+<img width="1277" height="560" alt="Demo Screenshot" src="https://github.com/user-attachments/assets/bb3f6390-03e6-49d2-be68-1a8dff6d8ec6" />
+
+---
 
 ## Troubleshooting
 
-* Ensure both backend and frontend are running to avoid connection issues
-* Ollama must be running and model pulled correctly
+* Ensure both backend and frontend are running
+* Ollama must be active and model pulled correctly
 * Recommended Python version: 3.10 or 3.11
-* If Streamlit UI changes are not applied, refresh browser and restart app
+* Refresh browser or restart Streamlit if UI changes do not apply
 
 ---
 
 ## Notes
 
-* Backend uses sentence-transformers for local semantic search (RAG)
-* Frontend is Streamlit-based with custom CSS for chat interface and styling
+* Backend uses sentence-transformers for semantic search (RAG)
+* Frontend is fully Streamlit-based with custom CSS styling for chat interface
 
 ```
 
-This version keeps the **content original**, avoids plagiarism, and is **ready for your GitHub repository**.  
-
-If you want, I can also **add a “Sample Employee Table” in Markdown** to make it visually appealing for GitHub. Do you want me to do that?
-```
