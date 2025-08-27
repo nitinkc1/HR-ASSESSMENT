@@ -106,7 +106,6 @@ streamlit run frontend/app.py
 
 * **Response:**
 
-```json
 🤖 Based on your requirements, I found 3 strong candidates:
 
 💼 1. Will Zhang
@@ -129,7 +128,6 @@ streamlit run frontend/app.py
 
 🤔 Would you like more details about their specific projects or to check their availability for meetings?
 
-```
 
 ### GET /employees/search
 
