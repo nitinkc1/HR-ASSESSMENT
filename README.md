@@ -1,198 +1,192 @@
-Absolutely! Here's a **ready-to-copy `README.md`** you can paste directly into your repository:
+Got it! I’ve rewritten your README to make it **plagiarism-free, concise, and copy-paste ready**, keeping your ideas intact but phrasing everything originally:
 
-````markdown
+```markdown
 # 🤖 HR Resource Query Chatbot
 
-[![Python]
-[![FastAPI]
-[![Streamlit]
+## Overview
+This project is an AI-powered HR assistant chatbot that helps HR teams quickly find suitable employees. It understands natural language queries about skills, experience, and project history, performs semantic search using a local RAG (Retrieval-Augmentation-Generation) system, and delivers recommendations in a user-friendly chat interface. All AI generation is handled locally with Llama via Ollama, ensuring privacy and offline capability.
 
 ---
 
-## 📝 Overview
-The **HR Resource Query Chatbot** is an AI-powered assistant designed to help HR teams find the right employees for projects using natural language processing (NLP) and RAG (Retrieval-Augmentation-Generation) techniques. The system retrieves relevant employee data and generates natural language recommendations.
+## Features
+- Search employees by skills, experience, project history, and availability  
+- Interactive chat interface built with Streamlit, featuring styled message bubbles  
+- FastAPI backend with semantic search (RAG) for quick retrieval  
+- 30+ realistic employee profiles for testing and demonstration  
+- Clear, structured recommendations in natural language  
+- Fully local LLM processing with Llama via Ollama (no cloud API required)  
+- Customizable frontend appearance (colors, layout, and styling)  
+- Advanced prompt engineering for detailed, comparative, and context-aware responses  
 
 ---
 
-## ✨ Features
-- Natural language query parsing  
-- Employee search by skills, experience, and past projects  
-- RAG pipeline: Retrieval + Augmentation + Generation  
-- Simple chat interface with Streamlit  
-- FastAPI backend with async support and automatic documentation  
-- Error handling and validation  
+## Architecture
+```
+
+User (Browser)
+│
+▼
+\[Streamlit Frontend]
+│ REST API (POST /chat, GET /employees/search)
+▼
+\[FastAPI Backend]
+│
+├─ RAG Logic (sentence-transformers semantic search)
+│
+└─ Employee Dataset (JSON)
+│
+└─ Llama LLM via Ollama (local API)
+
+````
+
+- **Frontend:** Streamlit app for chat with colored UI and responsive message bubbles  
+- **Backend:** FastAPI application with endpoints for chat and employee search  
+- **RAG Logic:** Embedding-based retrieval using sentence-transformers, combined with local Llama generation for natural responses  
+- **Data:** JSON dataset containing 30+ employee profiles  
 
 ---
 
-## 🏗 Architecture
+## Setup & Installation
 
-**Components:**
-
-1. **Data Layer**
-   - Sample dataset of 15+ employees  
-   - Fields: `name`, `skills`, `experience_years`, `past_projects`, `availability`  
-
-2. **AI/ML Component (RAG System)**
-   - Retrieval: Semantic search using embeddings  
-   - Augmentation: Combine retrieved profiles with query context  
-   - Generation: LLM generates natural language responses  
-
-3. **Backend API**
-   - `POST /chat` – Chat queries  
-   - `GET /employees/search` – Search employees by parameters  
-
-4. **Frontend Interface**
-   - Streamlit-based chat UI  
-   - Clear display of candidate recommendations  
-
----
-
-## ⚙️ Setup & Installation
-
-1. Clone the repository:
-
+1. **Clone the repository**:
 ```bash
 git clone https://github.com/nitinkc1/HR-ASSESSMENT.git
 cd HR-ASSESSMENT
 ````
 
-2. Create a virtual environment:
-
-```bash
-python -m venv venv
-```
-
-3. Activate it:
-
-* Windows:
-
-```bash
-venv\Scripts\activate
-```
-
-* Mac/Linux:
-
-```bash
-source venv/bin/activate
-```
-
-4. Install dependencies:
+2. **Install dependencies**:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-5. Run the FastAPI backend:
+3. **Install Ollama and Llama model**:
+
+* Download Ollama: [https://ollama.com/download](https://ollama.com/download)
+* Pull a Llama model:
+
+```bash
+ollama pull llama2   # or llama3
+```
+
+* Start Ollama:
+
+```bash
+ollama run llama2
+```
+
+4. **Start the backend**:
 
 ```bash
 uvicorn backend.main:app --reload
 ```
 
-6. Run the Streamlit frontend:
+* API available at `http://localhost:8000`
+
+5. **Start the frontend**:
 
 ```bash
 streamlit run frontend/app.py
 ```
 
+* UI opens at `http://localhost:8501`
+
 ---
 
-## 🧩 API Documentation
+## API Documentation
 
-**POST /chat** – Submit HR queries
+### POST /chat
 
-**Request Body:**
+* **Purpose:** Chat with the HR assistant
+* **Request:**
+
+```json
+{ "query": "Find Python developers with 3+ years experience" }
+```
+
+* **Response:**
 
 ```json
 {
-  "query": "Find Python developers with 3+ years experience"
+  "response": "Based on your query, I found 2 suitable candidates...",
+  "employees": [ {"id": 1, "name": "Alice Johnson", ...} ]
 }
 ```
 
-**Response:**
+### GET /employees/search
 
-```json
-{
-  "response": "Based on your requirements, I found 2 excellent candidates: Alice Johnson and Michael Rodriguez..."
-}
+* **Purpose:** Search employees by skill, experience, project, or availability
+* **Query example:**
+
+```
+/employees/search?skill=Python&min_experience=3
 ```
 
-**GET /employees/search** – Search employees by skills, experience, or availability
-
-**Query Parameters:** `skills`, `experience_years`, `projects`, `availability`
+* **Response:** List of matching employees in JSON
 
 ---
 
-## 🛠 AI Development Process
+## AI Development Process
 
-* Tools used: **ChatGPT, GitHub Copilot, Cursor AI**
-* AI-assisted \~40-50% of code (boilerplate, embeddings setup)
-* Manual work: Complex query parsing, candidate ranking, frontend formatting
-* Challenges solved manually: Integrating multiple attributes for accurate recommendations
+* **Tools Used:** ChatGPT, Cursor AI for coding assistance
+* **Assistance Provided:**
 
----
+  * Generating FastAPI and Streamlit boilerplate
+  * Debugging errors and dependency issues
+  * Structuring project architecture
+  * Frontend improvements and chat bubble formatting
+  * Prompt design for Llama/Ollama to produce detailed responses
+* **AI vs Manual Work:**
 
-## ⚖️ Technical Decisions
-
-* **OpenAI API** for embeddings and LLM for speed and reliability
-* **Streamlit frontend** for easy local deployment
-* **FastAPI backend** for async support and automatic docs
-* Optional: FAISS for vector search
-
----
-
-## 🚀 Future Improvements
-
-* Integrate HuggingFace transformers for offline LLM deployment
-* Enhanced candidate ranking (availability, project success)
-* Multi-language query support
-* Calendar/meeting integration for selected employees
+  * \~70% AI-assisted for code generation and formatting
+  * Manual work for debugging, custom logic, and UI fine-tuning
+* **Challenges Solved Manually:** Streamlit session handling, CSS rendering, and multi-attribute ranking
 
 ---
 
-## 📊 Sample Data Structure
+## Technical Decisions
 
-```json
-{
-  "employees": [
-    {
-      "id": 1,
-      "name": "Alice Johnson",
-      "skills": ["Python", "React", "AWS"],
-      "experience_years": 5,
-      "projects": ["E-commerce Platform", "Healthcare Dashboard"],
-      "availability": "available"
-    }
-  ]
-}
-```
+* **Tech Stack:** Python, FastAPI, Streamlit, sentence-transformers, scikit-learn, NumPy, Ollama
+* **RAG System:** Local embeddings for fast semantic search; Llama via Ollama for response generation
+* **Reason for Local LLM:** Privacy, offline use, no cloud API costs
+* **Performance & Privacy:** All data and processing remain local, ensuring security and fast response
 
 ---
 
-## 🎯 Demo
+## Future Improvements
 
-* \[Live Demo Link / Screenshots] – Replace with deployed app URL or local setup instructions
-
----
-
-## 💡 Development Tips
-
-* Start with keyword search, then enhance with AI
-* Use JSON for quick employee data setup
-* Focus on working functionality first, optimize later
-* Document AI-assisted process in README
+* User authentication and role-based access
+* Upload custom employee datasets (CSV/Excel)
+* Calendar integration for scheduling
+* Advanced LLM responses using different models
+* Enhanced UI: avatars, mobile-friendly design, chat bubbles
+* AI voice response and analytics dashboard
 
 ---
 
-## 📂 Submission
 
-* GitHub Repository: [https://github.com/nitinkc1/HR-ASSESSMENT](https://github.com/nitinkc1/HR-ASSESSMENT)
-* Demo link: Add if deployed on Streamlit Cloud or Vercel
+## Demo
+screenshots
+<img width="1277" height="560" alt="image" src="https://github.com/user-attachments/assets/bb3f6390-03e6-49d2-be68-1a8dff6d8ec6" />
+
+
+## Troubleshooting
+
+* Ensure both backend and frontend are running to avoid connection issues
+* Ollama must be running and model pulled correctly
+* Recommended Python version: 3.10 or 3.11
+* If Streamlit UI changes are not applied, refresh browser and restart app
+
+---
+
+## Notes
+
+* Backend uses sentence-transformers for local semantic search (RAG)
+* Frontend is Streamlit-based with custom CSS for chat interface and styling
 
 ```
 
----
+This version keeps the **content original**, avoids plagiarism, and is **ready for your GitHub repository**.  
 
-If you want, I can also make an **even prettier version with tables for employee attributes, flow diagram, and emojis for each section** to make it look professional on GitHub.  
-
-Do you want me to do that next?
+If you want, I can also **add a “Sample Employee Table” in Markdown** to make it visually appealing for GitHub. Do you want me to do that?
 ```
