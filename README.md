@@ -3,9 +3,9 @@ Absolutely! Here's a **ready-to-copy `README.md`** you can paste directly into y
 ````markdown
 # 🤖 HR Resource Query Chatbot
 
-[![Python](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/)  
-[![FastAPI](https://img.shields.io/badge/FastAPI-v0.100.0-green.svg)](https://fastapi.tiangolo.com/)  
-[![Streamlit](https://img.shields.io/badge/Streamlit-v1.25-orange.svg)](https://streamlit.io/)
+[![Python]
+[![FastAPI]
+[![Streamlit]
 
 ---
 
