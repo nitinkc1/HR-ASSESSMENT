@@ -101,7 +101,7 @@ streamlit run frontend/app.py
 * **Request:**
 
 ```json
-{ "query": "Find Python developers with 3+ years experience" }
+{ "query": "Find SQL  developers with 3+ years experience" }
 ```
 
 * **Response:**
