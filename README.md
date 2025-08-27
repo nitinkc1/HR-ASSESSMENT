@@ -107,10 +107,28 @@ streamlit run frontend/app.py
 * **Response:**
 
 ```json
-{
-  "response": "Based on your query, I found 2 suitable candidates...",
-  "employees": [ {"id": 1, "name": "Alice Johnson", ...} ]
-}
+🤖 Based on your requirements, I found 3 strong candidates:
+
+💼 1. Will Zhang
+   - Experience: 7 years
+   - Key Skills: Java, Spring, MySQL
+   - Notable Projects: Banking App, Inventory System
+   - Availability: ✅ available
+
+💼 2. Priya Desai
+   - Experience: 2 years
+   - Key Skills: Python, Flask, SQL
+   - Notable Projects: Inventory System, Healthcare Dashboard
+   - Availability: ✅ available
+
+💼 3. Genie
+   - Experience: 4 years
+   - Key Skills: PyTorch, Azure, C++, DevOps
+   - Notable Projects: Fleet Management, Retail Analytics
+   - Availability: ✅ available
+
+🤔 Would you like more details about their specific projects or to check their availability for meetings?
+
 ```
 
 ### GET /employees/search
